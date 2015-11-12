@@ -44,7 +44,7 @@ find duplication, compare tree structure data, find code clone (target to refact
   - output
     - collect data
     ```javascript
-    store.find({"isSame": true, "aDepth": {"$lt": "bDepth"}}).sort({"score": -1})
+    store.find({"isSame": true, "$where": "this.aDepth < bDepth"}).sort({"score": -1})
     ```
     - print
     ```json
